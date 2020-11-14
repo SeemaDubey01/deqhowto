@@ -1,0 +1,10 @@
+mysql
+sudo mysql -u <user> -p
+show databases;
+create database <dequizdb>;
+use database - user testdb
+then create table
+create user
+CREATE USER 'mdubey'@'localhost' IDENTIFIED BY 'Manish123';
+CREATE USER 'newuser'@'%' IDENTIFIED BY 'Manish123'; //ip or % for all ips
+GRANT ALL PRIVILEGES ON <dbname>.<tablename> TO 'user'@'localhost'; // * for all tables

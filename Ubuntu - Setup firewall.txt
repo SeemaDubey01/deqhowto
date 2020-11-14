@@ -1,0 +1,47 @@
+Install ufw - uncomplicated firewall
+$ sudo apt install ufw
+Enable ufw
+$ sudo ufw enable
+Check status
+$ sudo ufw status verbose
+
+Set default rule - deny all incoming and allow all outgoing
+$ sudo ufw default deny incoming
+$ sudo ufw default allow outgoing
+
+Allow SSH, http, https connection
+$ sudo ufw allow ssh
+$ sudo ufw allow http
+$ sudo ufw allow https
+
+Allow specific port on tcp protocol
+$ sudo ufw allow 80/tcp
+
+Allow RDP from particular machine
+$ sudo ufw allow from 85.148.189.6 to any port 3389
+
+Allow range of port over tcp
+$ sudo ufw allow 6000:6003/tcp
+
+Deny incoming from any ip
+$ sudo ufw deny from 203.0.123.5
+
+Allow subnet access to a port over tcp
+$ sudo ufw allow from 192.168.1.0/24 to port 443 proto tcp
+$ sudo ufw allow from 192.168.1.0/24 to any app Apache
+
+Deny port access
+sudo ufw deny 25
+sudo ufw deny 25/tcp comment 'Block access to smptd by default'
+
+Find list of service
+$ sudo ufw app list
+Get information on app
+$ sudo ufw app info Apache
+
+Delete ufw rules
+sudo ufw status
+sudo ufw numbered
+sudo ufw delete 5
+or
+ufw delete deny 25/tcp comment 'Block access to smptd by default'

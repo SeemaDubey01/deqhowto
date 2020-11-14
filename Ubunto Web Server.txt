@@ -1,0 +1,24 @@
+Create ubuntu VM
+use Putty to connect to VM via port 22
+Connect using user-id/password
+update linux - sudo apt update
+install GUI - sudo apt install lxde
+echo startlxde > ~/.xsession
+
+install remote connection 
+sudo apt install xrdp
+start remote connection - /etc/init.d/xrdp start
+check status - sudo systemctl status xrdp
+connecti VM usind RDP now
+
+You should replace this file (located at /var/www/html/index.html) 
+default direcotry:var/www
+default doc root - var/www/html
+webapplication - /usr/share
+tomcat admin - admin/passwordkanu
+------------------------------------------
+create user
+	$sudo groupadd tomcat
+Next, create a new tomcat user. We’ll make this user a member of the tomcat group, with a home directory of /opt/tomcat (where we will install Tomcat), and with a shell of /bin/false (so nobody can log into the account):
+
+$sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
